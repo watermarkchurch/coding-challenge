@@ -99,11 +99,11 @@ group :red_green_refactor, halt_on_fail: true do
     watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
   end
 
-  guard :shell, all_on_start: false do
-    watch_async(%r{^app/views/(.+\.html.*\.erb)}) do |matches|
-      system("bundle exec erblint #{matches.map { |m| m[0] }.join(' ')}")
-    end
-  end
+  # guard :shell, all_on_start: false do
+  #   watch_async(%r{^app/views/(.+\.html.*\.erb)}) do |matches|
+  #     system("bundle exec erblint #{matches.map { |m| m[0] }.join(' ')}")
+  #   end
+  # end
 end
 
 group :autofix do
@@ -112,11 +112,11 @@ group :autofix do
     watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
   end
 
-  guard :shell, all_on_start: false do
-    watch_async(%r{^app/views/(.+\.html.*\.erb)}) do |matches|
-      system("bundle exec erblint --autocorrect -- #{matches.map { |m| m[0] }.join(' ')}")
-    end
-  end
+  # guard :shell, all_on_start: false do
+  #   watch_async(%r{^app/views/(.+\.html.*\.erb)}) do |matches|
+  #     system("bundle exec erblint --autocorrect -- #{matches.map { |m| m[0] }.join(' ')}")
+  #   end
+  # end
 end
 
 scope group: :red_green_refactor
