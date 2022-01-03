@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  # postgres:
+  #   image: postgres:13
+  #   ports:
+  #     - "5432"
+
+  web:
+    build: .
+    command: ["bundle", "exec", "rails", "server", "-p", "80", "-b", "0.0.0.0"]
+    environment:
+      - LANG=C.UTF-8
+    volumes:
+      - .:/app:delegated
+      - bundle:/bundle:cached
+    ports:
+      - "3000:80"
+    # depends_on:
+    #   - postgres
+
+volumes:
+  bundle:
