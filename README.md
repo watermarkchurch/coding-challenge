@@ -50,6 +50,12 @@ work by forking this repository and sending a pull request.
 If you chose to create your own rails app from scratch, please submit your work
 by creating a new git repository and emailing us a link to it.
 
+## Hint
+
+Your next step should probably be to use Rails' [scaffold generator](https://www.rubyguides.com/2020/03/rails-scaffolding/)
+to generate your `Message` model and controllers.  
+`bundle exec rails g scaffold Message`
+
 ## Checklist
 
 - [ ] The homepage (path `/`) SHALL present a list of messages from the database
