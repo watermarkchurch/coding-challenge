@@ -1,8 +1,17 @@
-<div class="box">
-    <section>
-        <div class="header">
-            <h3>Messages</h3>
-        </div>
-        <%= render 'shared/feed' %>
-    </section>
+<% provide(:title, 'Welcome to the Message Board!') %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= yield(:title) %></title>
+    </head>
+    <body>
+        <div class="box">
+            <section>
+                <div class="header">
+                    <h3>Messages</h3>
+                </div>
+                <%= render 'shared/feed' %>
+            </section>
 </div>
+    </body>
+</html>
