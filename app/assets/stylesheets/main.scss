@@ -58,3 +58,133 @@ section {
         }
     }
 }
+
+header {
+    .box {
+        background-color: rgb(88, 86, 86);
+        
+        padding-left: 5px;
+        border-bottom: 3px solid rgb(22, 21, 21);
+    }
+
+    .header {
+        justify-content: left;
+        width: 100%;
+    }
+
+    #logo {
+        float: left;
+        margin-right: 10px;
+        font-size: 1.7em;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        &:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+    }
+
+    .link {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; 
+    }
+
+    li {
+        a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: rgb(100, 100, 100);
+                color: white;
+            }
+        }
+
+        float: left;
+
+    }
+      
+}
+
+section{
+    align-content: center;
+
+    .header2{
+        border-bottom: 1px solid black;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        line-height: 1;
+        font-size: 2.5em;
+        font-weight: 300;
+        padding: 1rem;
+    }
+    .form-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        .form {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        form {
+            width: 100%;
+            padding-top: 15px;
+            input {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: 100%;
+                
+            }
+
+            textarea {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            label {
+                font-weight: 300;
+
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+#error_explanation {
+    color: red;
+    ul {
+      color: red;
+      border-color: red;
+      margin: 0 0 30px 0;
+    }
+  }
+
