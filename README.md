@@ -58,7 +58,7 @@ to generate your `Message` model and controllers.
 
 ## Checklist
 
-- [ ] The homepage (path `/`) SHALL present a list of messages from the database
+- [x] The homepage (path `/`) SHALL present a list of messages from the database
 - [ ] The homepage SHALL provide a link to a form to upload a new message
 - [ ] The new message page SHALL accept a mp4 file upload
 - [ ] The new message page MAY accept an additional jpeg or PNG file upload as a thumbnail image
@@ -100,5 +100,5 @@ to generate your `Message` model and controllers.
 - [ ] The API query endpoint’s response MAY include the following additional fields:
  * thumbnail image URL
 - [ ] The above thumbnail image URL, if included, SHALL result in an image being displayed when used as the “src” attribute in an HTML image element
-- [ ] The application MAY contain a suite of unit tests, and instructions on how to execute them.
+- [x] The application MAY contain a suite of unit tests, and instructions on how to execute them.
   Note: these tests need not be exhaustive, but there should be at least 1.  You decide how many tests you want to include. 

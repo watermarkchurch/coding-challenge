@@ -11,6 +11,7 @@ section {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
     h3 {
         text-align: center;
         line-height: 1;
@@ -21,7 +22,39 @@ section {
 
     .header {
         width: 80%;
-
         border-bottom: 1px solid black;
+    }
+
+    .messages {
+        margin-top: 1rem;
+        width: 100%;
+    
+        .content {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            
+            .title {
+                font-size: 2em;
+                font-weight: 400;
+                text-align: center;
+                padding-top: 3rem;
+            }
+
+            &:nth-child(2n) {
+                background-color: rgb(190, 187, 187);
+            }
+
+            .flex {
+                width: 80%;
+                padding-bottom: 3rem;
+            }
+
+            .message {
+                font-weight: 400;
+            }
+        }
     }
 }
