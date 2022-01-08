@@ -10,6 +10,9 @@
         <span class="message">
             <%= message.content %>
         </span>
+        <div class="video">
+            <%= video_tag(url_for(message.video), controls: true, autoplay: true) if message.video.attached? %>
+        </div>
     </div>
     <div class="buttons-wrapper">
         <div class="edit">

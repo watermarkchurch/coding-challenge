@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/edit', to: 'messages#edit'
   # get '/destroy', to: 'messages#destroy'
 
-  resources :messages, only: [:create, :edit, :destroy]
+  resources :messages
 end

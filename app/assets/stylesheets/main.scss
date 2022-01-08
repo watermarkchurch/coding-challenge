@@ -54,6 +54,13 @@ section {
 
             .message {
                 font-weight: 400;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .video {
+                padding-top: 1rem;
+                text-align: center;
             }
         }
     }
@@ -154,6 +161,7 @@ section{
 
             label {
                 text-align: center;
+                display: flex;
             }
         }
 
@@ -171,6 +179,11 @@ section{
                 padding: 10px
             }
 
+            input[type=file] {
+                margin-top: 15px;
+                margin-bottom: 15px;  
+            }
+
             textarea {
                 margin-top: 15px;
                 margin-bottom: 15px;
@@ -182,7 +195,8 @@ section{
             label {
                 font-weight: 300;
                 text-align: center;
-                font-size: 2rem;
+                font-size: 1.3rem;
+        
             }
         }
     }
