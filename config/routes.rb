@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'pages#home'
   get '/new', to: 'messages#new'
+  get '/edit', to: 'messages#edit'
+  # get '/destroy', to: 'messages#destroy'
 
-  resources :messages
+  resources :messages, only: [:create, :edit, :destroy]
 end

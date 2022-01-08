@@ -49,7 +49,7 @@ section {
 
             .flex {
                 width: 80%;
-                padding-bottom: 3rem;
+                padding-bottom: 1rem;
             }
 
             .message {
@@ -147,32 +147,41 @@ section{
         width: 80%;
         .form {
             display: flex;
-            flex-direction: column;
-            text-align: center;
+            flex-direction: column;            
             justify-content: center;
             align-items: center;
             width: 100%;
+
+            label {
+                text-align: center;
+            }
         }
 
         form {
             width: 100%;
             padding-top: 15px;
-            input {
+            input[type=submit] {
                 margin-top: 15px;
                 margin-bottom: 15px;
-                width: 100%;
-                
+            }
+
+            input[type=text] {
+                margin-top: 15px;
+                margin-bottom: 15px;  
+                padding: 10px
             }
 
             textarea {
                 margin-top: 15px;
                 margin-bottom: 15px;
                 width: 100%;
+                min-height: 100px;
+                padding: 10px
             }
 
             label {
                 font-weight: 300;
-
+                text-align: center;
                 font-size: 2rem;
             }
         }
@@ -186,5 +195,24 @@ section{
       border-color: red;
       margin: 0 0 30px 0;
     }
-  }
+}
 
+.edit-button {
+    width: 5rem;
+    margin: 5px;
+}
+
+.delete-button {
+    width: 5rem;
+    margin: 5px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3rem;
+}
+
+.timestamp {
+    padding-bottom: 2rem;
+}
