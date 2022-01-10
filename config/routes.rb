@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # get '/destroy', to: 'messages#destroy'
 
   resources :messages
+  resources :tags
 end
