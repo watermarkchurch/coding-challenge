@@ -96,7 +96,7 @@ to generate your `Message` model and controllers.
   * Description
   * Tag
   * URL 
-- [ ] The above URL SHALL cause the browser to play the uploaded MP4 video when copy-pasted out of the API response into the URL bar.
+- [ ] The above URL SHALL cause the browser to play (NOT download) the uploaded MP4 video when copy-pasted out of the API response into the URL bar.
 - [ ] The API query endpoint’s response MAY include the following additional fields:
  * thumbnail image URL
 - [ ] The above thumbnail image URL, if included, SHALL result in an image being displayed when used as the “src” attribute in an HTML image element
