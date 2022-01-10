@@ -1,7 +1,18 @@
 class MessagesController < ApplicationController
     # before_action :correct_message, only: [:destroy]
+    before_action :set_message, only: %i[ show edit update destroy ]
     def new
         @message = Message.new
+    end
+
+    def show
+        @message = Message.find(params[:id])
+        
+        # respond_to do |format|
+        #     format.html 
+        #     format.xml {render :xml => @message}
+        #     # format.json  {render :json => @message}
+        # end
     end
     
     def create
@@ -15,6 +26,17 @@ class MessagesController < ApplicationController
         else
             render 'new'
         end
+    end
+
+    def index
+        params.each do |key,value|
+            Rails.logger.warn "Param #{key}: #{value}"
+            if key == "tag"
+                @messages = Message.joins(:tags).where('tags.name' => value).group(:id)
+            end
+        end
+        # @messages = Message.all
+        # redirect_to controller: :tags, action: :show, :tag => 3
     end
 
     def edit
@@ -47,8 +69,13 @@ class MessagesController < ApplicationController
 
     private
 
+        # Use callbacks to share common setup or constraints between actions.
+        def set_message
+            @message = Message.find(params[:id])
+        end
+
         def message_params
-            params.require(:message).permit(:title, :content, :thumbnail, :video)
+            params.require(:message).permit(:title, :content, :thumbnail, :video, :tag_list)
         end
 
         def correct_message

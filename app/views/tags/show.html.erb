@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= yield(:title) %></title>
+    </head>
+    <body>
+        <div class="box">
+            <section>
+                <div class="header">
+                    <h3>Messages with Tag: <%= @tag.name %></h3>
+                </div>
+                <div class="messages">
+                    <% @tag.messages.each do |message| %>
+                        <%= render message %>
+                    <% end %>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
