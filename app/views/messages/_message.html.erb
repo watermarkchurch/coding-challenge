@@ -6,23 +6,29 @@
     <span class="timestamp">
         Posted <%= time_ago_in_words(message.created_at) %> ago.
     </span>
-    <span class="tags">
-        <% message.tags.each do |tag| %>
-            <%= link_to tag.name + " ", tag_path(tag)%>
-        <% end %>
-    </span>
+    <% if message.tags.any? %>
+        <span class="tags">
+            <% message.tags.each do |tag| %>
+                <%= link_to tag.name + " ", tag_path(tag), class:"btn btn-secondary" %>
+            <% end %>
+        </span>
+    <% end %>
     <div class="flex">
-        <div class="thumbnail">
-            <%= image_tag message.thumbnail if message.thumbnail.attached? %>
-        </div>
+        <% if message.thumbnail.attached? %>
+            <div class="thumbnail">
+                <%= image_tag message.thumbnail if message.thumbnail.attached? %>
+            </div>
+        <% end %>
         <div class="message_wrapper">
             <div class="message"> 
                 <%= message.content %>
             </div>
         </div>
-        <div class="video">
-            <%= video_tag(url_for(message.video), controls: true) if message.video.attached? %>
-        </div>
+        <% if message.video.attached? %>
+            <div class="video">
+                <%= video_tag(url_for(message.video), controls: true) if message.video.attached? %>
+            </div>
+        <% end %>
     </div>
     <div class="buttons-wrapper">
         <div class="edit">
