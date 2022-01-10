@@ -1,0 +1,41 @@
+
+<span class="content">
+    <span class="title">
+        <%= message.title %>
+    </span>
+    <span class="timestamp">
+        Posted <%= time_ago_in_words(message.created_at) %> ago.
+    </span>
+    <% if message.tags.any? %>
+        <span class="tags">
+            <% message.tags.each do |tag| %>
+                <%= link_to tag.name + " ", tag_path(tag), class:"btn btn-secondary" %>
+            <% end %>
+        </span>
+    <% end %>
+    <div class="flex">
+        <% if message.thumbnail.attached? %>
+            <div class="thumbnail">
+                <%= image_tag message.thumbnail if message.thumbnail.attached? %>
+            </div>
+        <% end %>
+        <div class="message_wrapper">
+            <div class="message"> 
+                <%= message.content %>
+            </div>
+        </div>
+        <% if message.video.attached? %>
+            <div class="video">
+                <%= video_tag(url_for(message.video), controls: true) if message.video.attached? %>
+            </div>
+        <% end %>
+    </div>
+    <div class="buttons-wrapper">
+        <div class="edit">
+            <%= link_to "Edit", edit_message_path(message), class:"edit-button btn btn-secondary" %>
+        </div>
+        <div class="delete">
+            <%= button_to "Delete", message, method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-secondary delete-button" %>
+        </div>
+    </div>
+</span>

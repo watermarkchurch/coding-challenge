@@ -1,4 +1,3 @@
-<% provide(:title, 'Welcome to the Message Board!') %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,9 +7,13 @@
         <div class="box">
             <section>
                 <div class="header">
-                    <h3>Messages</h3>
+                    <h3>Messages with Tag: <%= @tag.name %></h3>
                 </div>
-                <%= render 'shared/feed' %>
+                <div class="messages">
+                    <% @tag.messages.each do |message| %>
+                        <%= render message %>
+                    <% end %>
+                </div>
             </section>
         </div>
     </body>

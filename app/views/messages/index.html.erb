@@ -10,7 +10,13 @@
                 <div class="header">
                     <h3>Messages</h3>
                 </div>
-                <%= render 'shared/feed' %>
+                <div class="messages">
+                    <% if @messages.any? %>
+                        <%= render @messages %>
+                    <% else %>
+                        <p>There are no messages</p>
+                    <% end %>
+                </div>
             </section>
         </div>
     </body>

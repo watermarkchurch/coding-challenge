@@ -1,0 +1,7 @@
+<div class="messages">
+    <% if @messages.any? %>
+        <%= render @messages %>
+    <% else %>
+        <p class="center">There are no messages</p>
+    <% end %>
+</div>
