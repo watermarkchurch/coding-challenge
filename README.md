@@ -1,24 +1,71 @@
-# README
+# Watermark Sermon App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails application for posting Sermons.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+* Ruby 3.3.5 (as specified in `.ruby-version`)
+* SQLite3
+* Bundler
 
-* System dependencies
+## Setup
 
-* Configuration
+1. Clone the repository:
 
-* Database creation
+```bash
+git clone git@github.com:watermarkchurch/coding-challenge.git
+cd coding-challenge
+```
 
-* Database initialization
+2. Install dependencies:
+```bash
+bundle install
+```
 
-* How to run the test suite
+3. Set up the database:
+```bash
+bin/rails db:create db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the Application
 
-* Deployment instructions
+1. Start the Rails server and Tailwind CSS compiler:
+```bash
+bin/dev
+```
 
-* ...
+2. Open your web browser and navigate to:
+```
+http://localhost:3000
+```
+
+The application will redirect you to the messages index page at `/messages`.
+
+## Running Tests
+
+The application includes both model and controller tests. To run the test suite:
+
+```bash
+bin/rails test
+```
+
+To run system tests:
+
+```bash
+bin/rails test:system
+```
+
+## Features
+
+* Create, read, update, and delete messages
+* Upload MP4 video files
+* Upload thumbnail images (JPEG, PNG)
+* Add title and description to messages
+* Responsive design using Tailwind CSS
+
+## Technology Stack
+
+* Ruby on Rails 8.0
+* SQLite3 (database)
+* Tailwind CSS (styling)
+* Active Storage (file uploads)
