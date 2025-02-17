@@ -12,7 +12,7 @@ class Message < ApplicationRecord
     return unless media.attached?
 
     if !media.content_type.in?(%w[video/mp4 audio/mpeg audio/mp3])
-      errors.add(:media, 'must be an MP4 video or MP3 audio file')
+      errors.add(:media, "must be an MP4 video or MP3 audio file")
     end
   end
 end

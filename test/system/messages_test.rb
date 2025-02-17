@@ -59,11 +59,11 @@ class MessagesTest < ApplicationSystemTestCase
 
     # Attach media file
     attach_file "Video/Audio File (MP4 or MP3)",
-                Rails.root.join('test/fixtures/files/file_example_MP4_480_1_5MG.mp4')
+                Rails.root.join("test/fixtures/files/file_example_MP4_480_1_5MG.mp4")
 
     # Attach thumbnail
     attach_file "Thumbnail Image",
-                Rails.root.join('test/fixtures/files/jesus_flipping_tables.png')
+                Rails.root.join("test/fixtures/files/jesus_flipping_tables.png")
 
     click_on "Create Message"
 
@@ -78,11 +78,11 @@ class MessagesTest < ApplicationSystemTestCase
 
     # Attach new media file
     attach_file "Video/Audio File (MP4 or MP3)",
-                Rails.root.join('test/fixtures/files/file_example_MP3_700KB.mp3')
+                Rails.root.join("test/fixtures/files/file_example_MP3_700KB.mp3")
 
     # Attach new thumbnail
     attach_file "Thumbnail Image",
-                Rails.root.join('test/fixtures/files/jesus_flipping_tables.png')
+                Rails.root.join("test/fixtures/files/jesus_flipping_tables.png")
 
     click_on "Update Message"
 
