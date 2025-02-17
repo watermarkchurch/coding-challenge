@@ -1,12 +1,14 @@
-<% content_for :title, "Editing message" %>
+<div class="w-full px-4 py-8">
+  <% content_for :title, "Editing message" %>
 
-<h1>Editing message</h1>
+  <h1 class="text-3xl font-bold text-gray-900 mb-6">
+    <%= @message.title %>
+  </h1>
 
-<%= render "form", message: @message %>
+  <%= render "form", message: @message %>
 
-<br>
-
-<div>
-  <%= link_to "Show this message", @message %> |
-  <%= link_to "Back to messages", messages_path %>
+  <div class="mt-8 flex space-x-4">
+    <%= link_to "Show this message", @message, class: "text-blue-600 hover:text-blue-800" %>
+    <%= link_to "Back to messages", messages_path, class: "text-blue-600 hover:text-blue-800" %>
+  </div>
 </div>
