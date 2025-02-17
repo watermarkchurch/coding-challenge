@@ -3,6 +3,8 @@ require "application_system_test_case"
 class MessagesTest < ApplicationSystemTestCase
   setup do
     @message = messages(:one)
+    @message.title = "Test Message" # Ensure message has a title
+    @message.save!
   end
 
   test "visiting the index" do
@@ -14,6 +16,9 @@ class MessagesTest < ApplicationSystemTestCase
     visit messages_url
     click_on "New message"
 
+    fill_in "Title", with: "Test Message"
+    fill_in "Description", with: "Test description"
+
     click_on "Create Message"
 
     assert_text "Message was successfully created"
@@ -24,9 +29,17 @@ class MessagesTest < ApplicationSystemTestCase
     visit message_url(@message)
     click_on "Edit this message", match: :first
 
+    fill_in "Title", with: "Updated Message"
+    fill_in "Description", with: "Updated description"
+
     click_on "Update Message"
 
     assert_text "Message was successfully updated"
+
+    @message.reload
+    assert_equal "Updated Message", @message.title
+    assert_equal "Updated description", @message.description
+
     click_on "Back"
   end
 
