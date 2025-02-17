@@ -5,6 +5,18 @@
 
   <%= render @message %>
 
+  <% if @message.thumbnail.attached? %>
+    <%= image_tag @message.thumbnail %>
+  <% end %>
+
+  <% if @message.media.attached? %>
+    <% if @message.media.content_type.include?('video') %>
+      <%= video_tag url_for(@message.media), controls: true %>
+    <% else %>
+      <%= audio_tag url_for(@message.media), controls: true %>
+    <% end %>
+  <% end %>
+
   <div class="mt-8 grid grid-cols-2 gap-4">
     <div class="flex space-x-4">
       <%= link_to "Edit this message", edit_message_path(@message), class: "text-blue-600 hover:text-blue-800" %>

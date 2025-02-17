@@ -10,6 +10,36 @@
       <%= form.text_area :description, rows: 4, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
     </div>
 
+    <div class="space-y-2">
+      <%= form.label :media, "Video/Audio File (MP4 or MP3)", class: "block text-sm font-medium text-gray-700" %>
+      <div class="mt-1 flex items-center">
+        <%= form.file_field :media, 
+            accept: "video/mp4,audio/mp3,audio/mpeg",
+            class: "block w-full text-sm text-gray-500
+                   file:mr-4 file:py-2 file:px-4
+                   file:rounded-md file:border-0
+                   file:text-sm file:font-medium
+                   file:bg-indigo-50 file:text-indigo-700
+                   hover:file:bg-indigo-100" %>
+      </div>
+      <p class="text-xs text-gray-500">Upload an MP4 video or MP3 audio file</p>
+    </div>
+
+    <div class="space-y-2">
+      <%= form.label :thumbnail, "Thumbnail Image", class: "block text-sm font-medium text-gray-700" %>
+      <div class="mt-1 flex items-center">
+        <%= form.file_field :thumbnail,
+            accept: "image/*",
+            class: "block w-full text-sm text-gray-500
+                   file:mr-4 file:py-2 file:px-4
+                   file:rounded-md file:border-0
+                   file:text-sm file:font-medium
+                   file:bg-indigo-50 file:text-indigo-700
+                   hover:file:bg-indigo-100" %>
+      </div>
+      <p class="text-xs text-gray-500">Upload a thumbnail image (PNG, JPG, GIF)</p>
+    </div>
+
     <% if message.errors.any? %>
       <div class="rounded-md bg-red-50 p-4">
         <div class="flex">

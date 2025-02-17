@@ -11,5 +11,8 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    # Configure Active Storage for testing
+    ActiveStorage::Engine.config.active_storage.service = :test
   end
 end
